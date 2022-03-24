@@ -1,7 +1,7 @@
 <!--View associated to index action of StoreController controller -->
-<a href ="{{ path('store.allProducts') }}" class = "ui bottom attached yellow button">Parcourir le store ({{countProduct}} produits)</a>
+<a href ="{{ path('store.products') }}" class = "ui bottom attached yellow button">Parcourir le store ({{countProduct}} produits)</a>
 <div class="ui divider"></div>
-<div class = "ui cards">
+<div class = "ui three cards attached">
     {% for section in all %}
         <div class = "ui card">
             <div class ="content">
