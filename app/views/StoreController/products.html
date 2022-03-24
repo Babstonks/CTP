@@ -1,0 +1,21 @@
+<!--View associated to Allproducts action of StoreController controller -->
+<h1>Tous les produits</h1>
+<h4>{{count|length}} références</h4>
+<div class="ui divider"></div>
+<div class = "ui six cards attached">
+    {% for product in count %}
+    <div class = "ui card">
+        <div class="ui class ui card" > {{img('store/' ~ product.image ~ '.jpg', {class: ''}) }}</div>
+        <div class="content">
+            <span class="header">{{product.name}}</span>
+            <div class="meta">
+                <span>{{product.getPrice}}€</span>
+            </div>
+        </div>
+        <div class ="extra content">
+            <a class="ui bottom attached yellow button">+ To cart</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
