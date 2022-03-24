@@ -1,0 +1,12 @@
+<!--View associated to index action of StoreController controller -->
+    <button href ="{{ path('store.allProducts') }}" class = "ui yellow button">Parcourir le store ({{countProduct}} produits)</button>
+<div class = "ui cards">
+    {% for section in all %}
+        <div class = "ui card">
+            <h2>{{section.name}}</h2>
+
+            {{section.description}}
+            <button href="{{ path('store.section', [section.id])}}" class = "ui grey button">+ Consulter produits ({{section.products|length}}) ...</button>
+</div>
+    {% endfor %}
+</div>
