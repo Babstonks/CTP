@@ -1,11 +1,20 @@
 <!--View associated to section action of StoreController controller -->
 <h1>Section</h1>
+<h3>{{byId.name}}</h3>
+<div class="ui divider"></div>
 <div class = "ui cards">
-    {% for product in section %}
+    {% for product in byId.products %}
     <div class = "ui card">
-        <h2>{{product.name}}</h2>
-        {{product.prix}}
-        <a class="ui grey button" href="{{ path('store.section', [section.id])}}">+ Consulter produits ({{section.products|length}}) ...</a>
-    </div>
+        <div class="ui class ui card" > {{img('store/' ~ product.image ~ '.jpg', {class: ''}) }}</div>
+        <div class="content">
+            <span class="header">{{product.name}}</span>
+            <div class="meta">
+                <span>{{product.getPrice}}€</span>
+            </div>
+        </div>
+        <div class ="extra content">
+            <a class="ui bottom attached yellow button">+ To cart</a>
+        </div>
+        </div>
     {% endfor %}
 </div>

@@ -28,6 +28,7 @@ class StoreController extends \controllers\ControllerBase{
 
     #[Get(path: "store/section/{idSection}",name: "store.section")]
     public function section(int $idSection){
+        $this->repo->byId($idSection, ['products']);
         $this->loadView('StoreController/section.html');
     }
 }
