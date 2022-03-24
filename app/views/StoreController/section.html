@@ -1,0 +1,11 @@
+<!--View associated to section action of StoreController controller -->
+<h1>Section</h1>
+<div class = "ui cards">
+    {% for product in section %}
+    <div class = "ui card">
+        <h2>{{product.name}}</h2>
+        {{product.prix}}
+        <a class="ui grey button" href="{{ path('store.section', [section.id])}}">+ Consulter produits ({{section.products|length}}) ...</a>
+    </div>
+    {% endfor %}
+</div>
